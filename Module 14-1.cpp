@@ -27,44 +27,17 @@ int packages[2][3] = {{2, 1, 7},{3, 5, 31}}
 packages[0][0] +=1; // packages[0][0] хранит в себе цифру 2, и мы прибавляем к этому значению 1 — += 1.*/
 
 #include <iostream>
-#include <vector>
 
 int main()
 {
-	int vectorSize;
-	std::cout << "Input vector size: ";
-	std::cin >> vectorSize;
-	std::vector<int> userVector(vectorSize);
+int tableware[2][6] = {{4, 3, 3, 3, 3, 3},{4, 3, 3, 3, 3, 3}};
+int plates[2][6] = {{3, 2, 2, 2, 2, 2},{3, 2, 2, 2, 2, 2}};
+int chairs[2][6] = {{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1}};
 
-	std::cout << "Input numbers: ";
-	int elements = 0;
-
-	for (int i = 0; i < userVector.size(); ++i)
-	{
-		std::cin >> elements;
-		userVector[i] = elements;
+std::cout << "The beginning of the banquet." << std::endl;
+for (int i=0; i < 6 ; ++i){
+	std::cout << chairs[0][i] << " " << plates[0][i] << " " << tableware[0][i] << " ";
+	std::cout << chairs[1][i] << " " << plates[1][i] << " " << tableware[1][i] << std::endl;
 	}
-
-	std::cout << "Input number to delete: ";
-	int deleteValue = 0;
-	std::cin >> deleteValue;
-	for (uint32_t i = 0; i < userVector.size(); ++i)
-	{
-		if (userVector[i] == deleteValue) {
-			//при помощи обмена перемещаем элемент в конец вектора
-			for (std::size_t j = i; j < userVector.size() - 1; ++j) {
-				std::swap(userVector[j], userVector[j + 1]);
-			}
-			userVector.pop_back();
-			//уменьшаем счётчик цикла что бы не пропустить следующий элемент
-			--i;
-		}
-	}
-
-	std::cout << "Result: ";
-	for (int i = 0; i < userVector.size(); ++i)
-	{
-		std::cout << userVector[i] << " ";
-	}
-
+	
 }
