@@ -37,7 +37,18 @@ int chairs[2][6] = {{1, 1, 1, 1, 1, 1},{1, 1, 1, 1, 1, 1}};
 std::cout << "The beginning of the banquet." << std::endl;
 for (int i=0; i < 6 ; ++i){
 	std::cout << chairs[0][i] << " " << plates[0][i] << " " << tableware[0][i] << " ";
-	std::cout << chairs[1][i] << " " << plates[1][i] << " " << tableware[1][i] << std::endl;
+	std::cout << tableware[1][i] << " " << plates[1][i] << " " << chairs[1][i] << std::endl;
 	}
-	
+
+chairs[0][4] +=1;
+tableware[1][3] -=1;
+tableware[1][0] -=1;
+tableware[1][3] +=1;
+plates[1][0] -=1;
+
+std::cout << "The end of the banquet." << std::endl;
+for (int i=0; i < 6 ; ++i){
+	std::cout << chairs[0][i] << " " << plates[0][i] << " " << tableware[0][i] << " ";
+	std::cout << tableware[1][i] << " " << plates[1][i] << " " << chairs[1][i] << std::endl;
+	}
 }
